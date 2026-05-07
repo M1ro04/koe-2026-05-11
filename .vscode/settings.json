@@ -1,0 +1,5 @@
+{
+    "editor.inlineSuggest.enabled": false,
+    "github.copilot.nextEditSuggestions.fixes": false,
+    "github.copilot.renameSuggestions.triggerAutomatically": false
+}

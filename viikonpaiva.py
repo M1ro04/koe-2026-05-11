@@ -48,16 +48,16 @@ että funktiosi toimii oikein ja palauttaa oikeat viikonpäivien nimet oikeilla 
 Voit olettaa, että annettu päivän numero on aina kelvollinen kokonaisluku.
 """
 
+def viikonpaiva(paiva_numero): 
+    """Palauttaa viikonpäivän numeron perusteella."""
+    viikonpaivat = {
+        1: "maanantai",
+        2: "tiistai",
+        3: "keskiviikko",
+        4: "torstai",
+        5: "perjantai",
+        6: "lauantai",
+        7: "sunnuntai"
+    }
 
-# Toteuta oma viikonpaiva-funktiosi tähän
-
-
-if __name__ == "__main__":
-    # Jos kirjoitat omia testejä tai kokeiluja, toteuta ne if __name__ -lohkon sisään.
-    # Voit myös halutessasi poistaa tämän if-lohkon.
-    #
-    # Lisäksi suosittelemme hyödyntämään myös yllä olevaan tehtäväkuvaukseen sisältyviä doctest-
-    # testejä. Alla olevat rivit suorittavat tehtävänannon testit, kun tämä tiedosto ajetaan:
-
-    import doctest
-    doctest.testmod(verbose=True)
+    return viikonpaivat.get(paiva_numero, "")T

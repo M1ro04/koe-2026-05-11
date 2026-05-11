@@ -53,7 +53,7 @@ Esimerkiksi yllä olevasta `aanet`-tietorakenteesta saadut tulokset olisivat seu
 
 Palautettavassa sanakirjassa on oltava kaikkien äänestävien maiden nimet, vaikka ne eivät saisi
 lainkaan pisteitä. Esimerkiksi:
-    
+
     >>> "San Marino" in pisteet
     True
 
@@ -68,6 +68,20 @@ itselleen 8 pistettä, mutta näitä pisteitä ei saa laskea mukaan "Swedenin" k
 
     >>> pisteet["Sweden"]
     42
+
+Funktion tulee toimia millä tahansa maiden nimillä. Esimerkiksi:
+
+    >>> aanestys = {
+    ...     "Wakanda": { "Narnia": 12 },
+    ...     "Narnia": { "Wakanda": 10 }
+    ... }
+    >>> tulos = pistelaskuri(aanestys)
+
+    >>> tulos["Wakanda"]
+    10
+
+    >>> tulos["Narnia"]
+    12
 
 Säännöt:
 

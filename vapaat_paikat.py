@@ -69,17 +69,9 @@ voidaan jättää huomiotta.
 """
 
 
-def vapaat_paikat(katsomo: str) -> int:
-    # Toteuta oma ratkaisusi tänne
-    return -1
+def vapaat_paikat(katsomo):
+    """Laskee katsomon vapaiden paikkojen määrän."""
+
+    return katsomo.count("_")
 
 
-if __name__ == "__main__":
-    # Jos kirjoitat omia testejä tai kokeiluja, toteuta ne if __name__ -lohkon sisään.
-    # Voit myös halutessasi poistaa tämän if-lohkon.
-    #
-    # Lisäksi suosittelemme hyödyntämään myös yllä olevaan tehtäväkuvaukseen sisältyviä doctest-
-    # testejä. Alla olevat rivit suorittavat tehtävänannon testit, kun tämä tiedosto ajetaan:
-
-    import doctest
-    doctest.testmod(verbose=True)

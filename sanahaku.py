@@ -104,17 +104,29 @@ puolipisteitä itse kirjoitetussa koodissa.
 """
 
 
-def sanahaku(sana: str, ruudukko: str) -> bool:
-    # Toteuta oma funktiosi tähän
+def sanahaku(sana, ruudukko):
+    """Tarkistaa löytyykö sana ruudukosta."""
+
+    rivit = ruudukko.splitlines()
+
+    # Vaakasuunnat
+    for rivi in rivit:
+        if sana in rivi or sana in rivi[::-1]:
+            return True
+
+    # Pystysuunnat
+    leveys = len(rivit[0])
+
+    for sarake in range(leveys):
+        pystyrivi = ""
+
+        for rivi in rivit:
+            pystyrivi += rivi[sarake]
+
+        if sana in pystyrivi or sana in pystyrivi[::-1]:
+            return True
+
     return False
 
 
-if __name__ == "__main__":
-    # Jos kirjoitat omia testejä tai kokeiluja, toteuta ne if __name__ -lohkon sisään.
-    # Voit myös halutessasi poistaa tämän if-lohkon.
-    #
-    # Lisäksi suosittelemme hyödyntämään myös yllä olevaan tehtäväkuvaukseen sisältyviä doctest-
-    # testejä. Alla olevat rivit suorittavat tehtävänannon testit, kun tämä tiedosto ajetaan:
 
-    import doctest
-    doctest.testmod(verbose=True)

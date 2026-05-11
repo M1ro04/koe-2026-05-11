@@ -100,14 +100,20 @@ puolipisteitä itse kirjoitetussa koodissa.
 
 # Toteuta tänne uusi funktio, jonka nimi, parametrit ja paluuarvot
 # noudattavat tehtävänantoa.
+def pistelaskuri(aanet: dict) -> dict:
+    """Laskee maiden saamat kokonaispisteet."""
+
+    pisteet = {}
+
+    for maa in aanet:
+        pisteet[maa] = 0
+
+    for aanestaja in aanet:
+        for vastaanottaja in aanet[aanestaja]:
+            if vastaanottaja != aanestaja:
+                pisteet[vastaanottaja] += aanet[aanestaja][vastaanottaja]
+
+    return pisteet
 
 
-if __name__ == "__main__":
-    # Jos kirjoitat omia testejä tai kokeiluja, toteuta ne if __name__ -lohkon sisään.
-    # Voit myös halutessasi poistaa tämän if-lohkon.
-    #
-    # Lisäksi suosittelemme hyödyntämään myös yllä olevaan tehtäväkuvaukseen sisältyviä doctest-
-    # testejä. Alla olevat rivit suorittavat tehtävänannon testit, kun tämä tiedosto ajetaan:
 
-    import doctest
-    doctest.testmod(verbose=True)

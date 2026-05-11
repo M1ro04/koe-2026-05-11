@@ -60,17 +60,15 @@ len-funktiosta.
 """
 
 
-def kiertava_indeksi(lista: list, indeksi: int) -> str:
-    # Toteuta funktioon tehtävänannon mukainen logiikka
-    return ""
+def kiertava_indeksi(arvot: list, indeksi: int) -> str:
+    """Palauttaa listan arvon kiertävän indeksin perusteella."""
+    return arvot[indeksi % len(arvot)]
+
+lista = ['Ois', 'viisaampi', 'häipyy', 'täält']
+
+print(kiertava_indeksi(lista, 0))   # Ois
+print(kiertava_indeksi(lista, 4))   # Ois
+print(kiertava_indeksi(lista, -1))  # täält
+print(kiertava_indeksi(lista, -6))  # häipyy
 
 
-if __name__ == "__main__":
-    # Jos kirjoitat omia testejä tai kokeiluja, toteuta ne if __name__ -lohkon sisään.
-    # Voit myös halutessasi poistaa tämän if-lohkon.
-    #
-    # Lisäksi suosittelemme hyödyntämään myös yllä olevaan tehtäväkuvaukseen sisältyviä doctest-
-    # testejä. Alla olevat rivit suorittavat tehtävänannon testit, kun tämä tiedosto ajetaan:
-
-    import doctest
-    doctest.testmod(verbose=True)
